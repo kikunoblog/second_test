@@ -1,0 +1,586 @@
+@import "_header.scss"; // 拡張子は省略可能
+@import "_main.scss";
+@import "_footer.scss";
+
+html {
+  font-size: 62.5%; //ページ全体にフォントサイズ適用
+  //font-family: sans-serif; //ページ全体にフォント適用
+  //line-height: 1.15;
+}
+
+body {
+  font-family: "Noto Sans JP", MyYuGothicM, YuGothic, -apple-system,
+    BlinkMacSystemFont, "Hiragino kaku Gothic ProN", Meiryo, Verdana, arial,
+    helvetica, sans-serif;
+  font-size: 1.6rem;
+  color: #121212;
+  line-height: 1.7;
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1280px) {
+  .h-text {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 767px) and (max-width: 1200px) {
+  //（ここにタブレット用スタイルを記述）
+
+  .l-main {
+    padding-top: 50px; //画像が上に行きすぎていたので、その調整の為
+  }
+  .h-menu {
+    display: none;
+  }
+  .header .h-title p a {
+    height: 50px;
+  }
+  .h-logo {
+    height: 30px;
+  }
+  .h-text {
+    display: none;
+  }
+
+  .header {
+    #drawer_toggle {
+      z-index: 200;
+      box-sizing: border-box;
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+    }
+    #drawer_toggle:hover {
+      //ホバー時にテキストの色やカーソルを変える
+      cursor: pointer;
+    }
+
+    #drawer_toggle span {
+      position: absolute;
+      top: 19px;
+      left: 17px;
+      display: inline-block;
+      width: 23px;
+      height: 2px;
+      border-radius: 2px;
+      background-color: #2498b3;
+      vertical-align: top;
+    }
+
+    #drawer_toggle span:nth-child(2) {
+      margin-top: 10px;
+    }
+    #drawer_toggle span:last-child {
+      margin-top: 20px;
+    }
+    #drawer_toggle.open {
+      background-color: #2498b3;
+    }
+
+    #drawer_toggle.open span {
+      top: 24px;
+      left: 14px;
+      width: 23px;
+      margin: 0;
+    }
+    #drawer_toggle.open span:first-child {
+      transform: rotate(45deg);
+      background-color: #fff;
+    }
+    #drawer_toggle.open span:nth-child(2) {
+      display: none;
+    }
+    #drawer_toggle.open span:last-child {
+      transform: rotate(-45deg);
+      background-color: #fff;
+    }
+
+    #global_nav {
+      display: none;
+      position: absolute;
+      top: 50px;
+      left: 0;
+      right: 0;
+      width: 100%;
+      z-index: 999;
+      //@include hamburger{ 消去
+      //display: block;
+      //}; 消去
+    }
+
+    .h-r-menu {
+      z-index: 999;
+      display: block;
+      font-size: 1.6rem;
+      font-weight: 600;
+      background-color: #fff;
+      top: 50px;
+      width: 100%;
+      flex-direction: column;
+      //padding-left: 5px;
+
+      a {
+        //padding: 11.5px 0px 11.5px 5px;
+        color: #131d34;
+        text-decoration: none;
+        position: relative;
+
+        //display: block;
+        &:hover {
+          background-color: #f3fafb;
+        }
+      }
+    }
+
+    .h-r-list {
+      z-index: 999;
+      line-height: 3;
+      display: block;
+      //text-indent: 10px;
+
+      &:hover {
+        background-color: #f3fafb;
+      }
+      a {
+        display: block;
+        padding-left: 10px;
+        //position: relative;
+        &:hover {
+          background-color: #f3fafb;
+        }
+      }
+    }
+  }
+
+  .r-sub-menu {
+    z-index: 999;
+    display: none;
+    background-color: #fff;
+    font-size: 1.6rem;
+    font-weight: normal;
+    //padding-left: 12px;
+    //display: block;//これを設定するとホバー関係なく常に表示されてしまうので無効にする
+    a {
+      //display: block;
+      //padding-left: 10px;
+
+      &:hover {
+        background-color: #f3fafb;
+      }
+    }
+  }
+
+  .r-sub-menu-item {
+    line-height: 3;
+    //display: block;
+    padding-left: 12px;
+    background-color: #fff;
+    &:hover {
+      background-color: #f3fafb;
+    }
+    a {
+      //display: block;
+      background-color: #fff;
+      //padding-left: 10px;
+      &:hover {
+        background-color: #f3fafb;
+      }
+    }
+  }
+
+  .r-sub-text {
+    background-color: #fff;
+    //display: block;
+
+    a {
+      //display: block;
+      background-color: #fff;
+    }
+  }
+
+  .r-change::before {
+    display: block;
+    position: absolute;
+    top: 50%; //.h-menu直下のaタグの真ん中に揃える
+    right: 13px; //右から13pxに配置
+    content: ""; //文字を入れますよ宣言（今回は空白）
+    width: 24px; //線の長さ
+    height: 2px; //線の太さ
+    background-color: #121212; //colorプロパティでは色が反映されません
+  }
+
+  .h-singlemenu {
+    background-color: #fff;
+    font-size: 1.6rem;
+    font-weight: 600;
+
+    > a {
+      padding: 11.5px 0 11.5px 10px;
+      color: #131d34;
+      display: block;
+
+      &:hover {
+        background-color: #f3fafb;
+      }
+    }
+  }
+  .close {
+    position: relative;
+    > a::after {
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: 24px;
+      content: "";
+      width: 2px;
+      height: 24px;
+      background-color: #121212;
+      margin-top: -11px;
+    } //>a::afterの閉じカッコ
+  } //.closeの閉じカッコ
+}
+
+@media screen and (max-width: 768px) {
+  //（ここにスマホ用スタイルを記述）
+  .l-main {
+    padding-top: 50px; //画像が上に行きすぎていたので、その調整の為
+  }
+  .h-menu {
+    display: none;
+  }
+  .header .h-title p a {
+    height: 50px;
+  }
+  .h-logo {
+    height: 30px;
+  }
+  .h-text {
+    display: none;
+  }
+
+  .header {
+    #drawer_toggle {
+      z-index: 200;
+      box-sizing: border-box;
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+    }
+    #drawer_toggle:hover {
+      //ホバー時にテキストの色やカーソルを変える
+      cursor: pointer;
+    }
+
+    #drawer_toggle span {
+      position: absolute;
+      top: 19px;
+      left: 17px;
+      display: inline-block;
+      width: 23px;
+      height: 2px;
+      border-radius: 2px;
+      background-color: #2498b3;
+      vertical-align: top;
+    }
+
+    #drawer_toggle span:nth-child(2) {
+      margin-top: 10px;
+    }
+    #drawer_toggle span:last-child {
+      margin-top: 20px;
+    }
+    #drawer_toggle.open {
+      background-color: #2498b3;
+    }
+
+    #drawer_toggle.open span {
+      top: 24px;
+      left: 14px;
+      width: 23px;
+      margin: 0;
+    }
+    #drawer_toggle.open span:first-child {
+      transform: rotate(45deg);
+      background-color: #fff;
+    }
+    #drawer_toggle.open span:nth-child(2) {
+      display: none;
+    }
+    #drawer_toggle.open span:last-child {
+      transform: rotate(-45deg);
+      background-color: #fff;
+    }
+
+    #global_nav {
+      display: none;
+      position: absolute;
+      top: 50px;
+      left: 0;
+      right: 0;
+      width: 100%;
+      z-index: 999;
+      //@include hamburger{ 消去
+      //display: block;
+      //}; 消去
+    }
+
+    .h-r-menu {
+      display: block;
+      font-size: 1.6rem;
+      font-weight: 600;
+      background-color: #fff;
+      top: 50px;
+      width: 100%;
+      flex-direction: column;
+      //padding-left: 5px;
+
+      a {
+        //padding: 11.5px 0px 11.5px 5px;
+        color: #131d34;
+        text-decoration: none;
+        position: relative;
+
+        //display: block;
+        &:hover {
+          background-color: #f3fafb;
+        }
+      }
+    }
+
+    .h-r-list {
+      line-height: 3;
+      display: block;
+      //text-indent: 10px;
+
+      &:hover {
+        background-color: #f3fafb;
+      }
+      a {
+        display: block;
+        padding-left: 10px;
+        //position: relative;
+        &:hover {
+          background-color: #f3fafb;
+        }
+      }
+    }
+  }
+
+  .r-sub-menu {
+    display: none;
+    background-color: #fff;
+    font-size: 1.6rem;
+    font-weight: normal;
+    //padding-left: 12px;
+    //display: block;//これを設定するとホバー関係なく常に表示されてしまうので無効にする
+    a {
+      //display: block;
+      //padding-left: 10px;
+
+      &:hover {
+        background-color: #f3fafb;
+      }
+    }
+  }
+
+  .r-sub-menu-item {
+    line-height: 3;
+    //display: block;
+    padding-left: 12px;
+    background-color: #fff;
+    &:hover {
+      background-color: #f3fafb;
+    }
+    a {
+      //display: block;
+      background-color: #fff;
+      //padding-left: 10px;
+      &:hover {
+        background-color: #f3fafb;
+      }
+    }
+  }
+
+  .r-sub-text {
+    background-color: #fff;
+    //display: block;
+
+    a {
+      //display: block;
+      background-color: #fff;
+    }
+  }
+
+  .r-change::before {
+    display: block;
+    position: absolute;
+    top: 50%; //.h-menu直下のaタグの真ん中に揃える
+    right: 13px; //右から13pxに配置
+    content: ""; //文字を入れますよ宣言（今回は空白）
+    width: 24px; //線の長さ
+    height: 2px; //線の太さ
+    background-color: #121212; //colorプロパティでは色が反映されません
+  }
+
+  .h-singlemenu {
+    background-color: #fff;
+    font-size: 1.6rem;
+    font-weight: 600;
+
+    > a {
+      padding: 11.5px 0 11.5px 10px;
+      color: #131d34;
+      display: block;
+
+      &:hover {
+        background-color: #f3fafb;
+      }
+    }
+  }
+  .close {
+    position: relative;
+    > a::after {
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: 24px;
+      content: "";
+      width: 2px;
+      height: 24px;
+      background-color: #121212;
+      margin-top: -11px;
+    } //>a::afterの閉じカッコ
+  } //.closeの閉じカッコ
+  .f-img {
+    height: 300px;
+    padding-bottom: 320px;
+    background-position: center -25px;
+  }
+  .s-img {
+    background-size: cover;
+    background-position: center -25px;
+  }
+  .t-img {
+    background-size: cover;
+    align-items: flex-end;
+    background-position: center -30px;
+  }
+
+  .c-logo {
+    width: 280px;
+    height: auto;
+    margin: 0px 40px -11px 26px;
+    display: none;
+  }
+
+  .c-box {
+    background-color: #fff;
+    max-width: 100%;
+    width: 100%;
+    height: 155px;
+    //display: flex;
+    border-radius: 0px;
+    padding: 9px 0px 13px;
+    z-index: 4;
+    text-align: center;
+    align-items: center;
+    margin: 165px auto 0px;
+
+    & p {
+      color: #121212;
+      margin: 6.5px 0px;
+      font-weight: 700;
+      text-align: center;
+      font-size: 1.3rem;
+    }
+  }
+  .button {
+    width: 230px;
+    max-width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    padding: 7px;
+    color: #fff;
+    background-color: #2498b3;
+    border-radius: 5px;
+    margin: 0.5em 0;
+    & a {
+      padding: 12px 18px;
+      font-size: 1.6rem;
+      border-color: #2498b3;
+    }
+  }
+
+  .footer {
+    height: 1177px;
+    background-color: black;
+    padding-top: 1.7em;
+    //display: flex;
+    position: relative;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 0px;
+  }
+  .circle {
+    width: 225px; /*丸の形づくり*/
+    box-sizing: border-box; /* 追加 */
+    height: 225px; /*丸の形づくり*/
+    border-radius: 50%;
+    background: #fff; /*背景色*/
+    border: 6px solid #121212; /*枠の設定*/
+    //position: absolute;
+    //top:100px; left:10px;
+    margin: 40px auto;
+    display: block;
+    flex-direction: column;
+    //margin:-192px 55px 0px 45px;
+  }
+
+  .f-menu {
+    display: block; /* //3つのアイコンを横並びにするために設定 */
+    //justify-content: space-between;
+    //margin: 0 auto;
+    //max-width: 100%; /* 追加 */
+    margin-bottom: 0px 13px 40px;
+    width: auto;
+  }
+
+  .f-list {
+    //display: block;
+    z-index: 1;
+    //padding-bottom: 50px;
+    width: auto;
+  }
+  .t-0 {
+    text-align: center;
+  }
+  .t-1 {
+    color: #fff;
+    margin: -33.2px 0px 0px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .t-2 {
+    color: #fff;
+    margin: 9px 5px 0px 19px;
+    font-weight: bold;
+    //text-align: center;
+    //width: 100%;
+    //max-width: 100%;
+    overflow-wrap: break-word;
+    //display: inline;
+    font-size: 16px;
+    text-align: left;
+    display: inline-block;
+  }
+}

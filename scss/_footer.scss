@@ -1,0 +1,45 @@
+.footer {
+  height: 230px;
+  background-color: black;
+  //display: flex;
+  //max-width: 1078px;
+  justify-content: space-between;
+}
+.circle {
+  /*width: 225px;*/
+  width: 225px;
+  box-sizing: border-box; /* 追加 */
+  height: 225px;
+  border-radius: 50%;
+  background: #fff; /*背景色*/
+  border: 6px solid #121212; /*枠の設定*/
+  margin: -192px auto;
+  //margin:-192px 55px 0px 45px;
+}
+
+.f-menu {
+  display: flex; /* //3つのアイコンを横並びにするために設定 */
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 967px; /* 追加 */
+}
+
+.f-list {
+  z-index: 1;
+  width: 100%;
+}
+.t-1 {
+  color: #fff;
+  font-size: 23px;
+  font-weight: bold;
+  margin: 9em auto;
+  /* align-items: center; */
+  text-align: center;
+}
+
+.t-2 {
+  color: #fff;
+  font-weight: bold;
+  /* text-align: center; */
+  margin: -200px 47px;
+}

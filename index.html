@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head> 
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="サイトの説明文が入ります" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+    <link href="./css/ress.css" rel="stylesheet" />
+    <link href="./css/style.css" rel="stylesheet" />
+    <link
+      href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+      rel="stylesheet"
+    />
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.15.3/js/all.js"
+      integrity="sha384-haqrlim99xjfMxRP6EWtafs0sB1WKcMdynwZleuUSwJR0mDeRYbhtY+KPMr+JL6f"
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="./all.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="h-title">
+          <p>
+            <a href="http://176.34.11.254/"
+              ><img
+                src="./images/header-logo.svg"
+                alt="ヘッダーロゴ"
+                class="h-logo"
+              />
+              <span class="h-text"
+                >最速で<strong>「稼げる」</strong>プロになる<br />エンジニアリングスクール</span
+              >
+            </a>
+          </p>
+        </div>
+
+        <nav class="h-nav">
+          <ul class="h-menu">
+            <li class="h-list">
+              <a class="change" href="#">はじめての方へ</a>
+              <ul class="sub-menu">
+                <li class="sub-menu-item">
+                  <a class="sub-text" href="#">マンガでわかるRaiseTech</a>
+                </li>
+                <li class="sub-menu-item">
+                  <a class="sub-text" href="#">サポート体制</a>
+                </li>
+                <li class="sub-menu-item">
+                  <a class="sub-text" href="#">トライアル受講</a>
+                </li>
+                <li class="sub-menu-item">
+                  <a class="sub-text" href="#">就職・転職支援制度</a>
+                </li>
+                <li class="sub-menu-item">
+                  <a class="sub-text" href="#">ご利用の流れ</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="h-list">
+              コース案内
+              <ul class="sub-menu">
+                <li class="sub-menu-item">
+                  <a class="sub-text" href="#">マーケティングコース</a>
+                </li>
+                <li class="sub-menu-item">
+                  <a class="sub-text" href="#">デザインコース</a>
+                </li>
+                <li class="sub-menu-item">
+                  <a class="sub-text" href="#">WordPress副業コース</a>
+                </li>
+                <li class="sub-menu-item">
+                  <a class="sub-text" href="#">AWSフルコース</a>
+                </li>
+                <li class="sub-menu-item">
+                  <a class="sub-text" href="#">AWS自動化コース</a>
+                </li>
+                <li class="sub-menu-item">
+                  <a class="sub-text" href="#">Javaフルコース</a>
+                </li>
+                <li class="sub-menu-item">
+                  <a class="sub-text" href="#">Javaフレームワークコース</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="h-list">
+              <a class="change" href="#">講師紹介</a>
+            </li>
+
+            <li class="h-list">
+              卒業生の声・実績
+              <ul class="sub-menu">
+                <li class="sub-menu-item">
+                  <a class="sub-text" href="#">卒業生の声</a>
+                </li>
+                <li class="sub-menu-item">
+                  <a class="sub-text" href="#">転職・案件実績</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="h-list">
+              メディア
+              <ul class="sub-menu">
+                <li class="sub-menu-item">
+                  <a class="sub-text" href="#">動画一覧</a>
+                </li>
+                <li class="sub-menu-item">
+                  <a class="sub-text" href="#">掲載記事一覧</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="h-list">
+              <a class="change" href="#">サポート</a>
+              <ul class="sub-menu">
+                <li class="sub-menu-item">
+                  <a class="sub-text" href="#">よくあるご質問</a>
+                </li>
+                <li class="sub-menu-item">
+                  <a class="sub-text" href="#">お問い合わせ</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="h-list">
+              <a class="change" href="#">受講お申し込み</a>
+            </li>
+          </ul>
+
+          <div id="drawer_toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <nav id="global_nav">
+            <ul class="h-r-menu">
+              <li class="h-r-list list_down close">
+                <a class="r-change" href="#">はじめての方へ</a>
+
+                <ul class="r-sub-menu">
+                  <li class="r-sub-menu-item">
+                    <a class="r-sub-text" href="#">マンガでわかるRaiseTech</a>
+                  </li>
+                  <li class="r-sub-menu-item">
+                    <a class="r-sub-text" href="#">サポート体制</a>
+                  </li>
+                  <li class="r-sub-menu-item">
+                    <a class="r-sub-text" href="#">トライアル受講</a>
+                  </li>
+                  <li class="r-sub-menu-item">
+                    <a class="r-sub-text" href="#">就職・転職支援制度</a>
+                  </li>
+                  <li class="r-sub-menu-item">
+                    <a class="r-sub-text" href="#">ご利用の流れ</a>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="h-r-list list_down close">
+                <a class="r-change">コース案内</a>
+                <ul class="r-sub-menu">
+                  <li class="r-sub-menu-item">
+                    <a class="r-sub-text" href="#">マーケティングコース</a>
+                  </li>
+                  <li class="r-sub-menu-item">
+                    <a class="r-sub-text" href="#">デザインコース</a>
+                  </li>
+                  <li class="r-sub-menu-item">
+                    <a class="r-sub-text" href="#">WordPress副業コース</a>
+                  </li>
+                  <li class="r-sub-menu-item">
+                    <a class="r-sub-text" href="#">AWSフルコース</a>
+                  </li>
+                  <li class="r-sub-menu-item">
+                    <a class="r-sub-text" href="#">AWS自動化コース</a>
+                  </li>
+                  <li class="r-sub-menu-item">
+                    <a class="r-sub-text" href="#">Javaフルコース</a>
+                  </li>
+                  <li class="r-sub-menu-item">
+                    <a class="r-sub-text" href="#">Javaフレームワークコース</a>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="h-singlemenu">
+                <a class="r-change2" href="#">講師紹介</a>
+              </li>
+
+              <li class="h-r-list list_down close">
+                <a class="r-change">卒業生の声・実績</a>
+                <ul class="r-sub-menu">
+                  <li class="r-sub-menu-item">
+                    <a class="r-sub-text" href="#">卒業生の声</a>
+                  </li>
+                  <li class="r-sub-menu-item">
+                    <a class="r-sub-text" href="#">転職・案件実績</a>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="h-r-list list_down close">
+                <a class="r-change">メディア</a>
+                <ul class="r-sub-menu">
+                  <li class="r-sub-menu-item">
+                    <a class="r-sub-text" href="#">動画一覧</a>
+                  </li>
+                  <li class="r-sub-menu-item">
+                    <a class="r-sub-text" href="#">掲載記事一覧</a>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="h-r-list list_down close">
+                <a class="r-change" href="#">サポート</a>
+                <ul class="r-sub-menu">
+                  <li class="r-sub-menu-item">
+                    <a class="r-sub-text" href="#">よくあるご質問</a>
+                  </li>
+                  <li class="r-sub-menu-item">
+                    <a class="r-sub-text" href="#">お問い合わせ</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </nav>
+      </header>
+
+      <main class="l-main">
+        <article>
+          <div class="f-img">
+            <div class="s-img">
+              <div class="t-img">
+                <div class="c-box">
+                  <h1 class="h-title2">
+                    <img
+                      src="./images/header-logo.svg"
+                      alt="RaiseTech"
+                      class="c-logo"
+                      title="タイトル"
+                    />
+                  </h1>
+                  <p>
+                    はじめまして。RaiseTech（レイズテック）は
+                    <br />
+                    最速で「稼げる」エンジニアになるための、
+                    <br />
+                    実践的なWebエンジニアリングスクールです
+                  </p>
+                  <a
+                    href="https://raise-tech.net/about-raisetech"
+                    class="button"
+                    >マンガでわかるRaiseTech</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </main>
+      <div class="wrap">
+        <footer class="footer">
+          <ul class="f-menu">
+            <li class="f-list">
+              <div class="circle">
+                <i
+                  class="fas fa-dumbbell fa-6x"
+                  data-fa-transform="down-9.5 right-7.5"
+                ></i>
+              </div>
+              <div class="t-0">
+                <p class="t-1">現場主義</p>
+                <p class="t-2">
+                  「プログラム」だけでは稼げない！
+                  現場で求められる「技術」のみ教えます。
+                </p>
+              </div>
+            </li>
+
+            <li class="f-list">
+              <div class="circle">
+                <i
+                  class="fas fa-chalkboard-teacher fa-6x"
+                  data-fa-transform="down-9.5 right-7.5"
+                ></i>
+              </div>
+              <div class="t-0">
+                <p class="t-1">現役講師</p>
+                <p class="t-2">
+                  「今、求められている技術」をリアルタイムに教えてくれる、現役の技術者だけが講師です。
+                </p>
+              </div>
+            </li>
+
+            <li class="f-list">
+              <div class="circle">
+                <i
+                  class="far fa-life-ring fa-6x"
+                  data-fa-transform="down-9.5 right-9.5"
+                ></i>
+              </div>
+              <div class="t-0">
+                <p class="t-1">徹底サポート</p>
+                <p class="t-2">
+                  期間中の質疑応答無制限！ 個別進捗管理！
+                  挫折させないサポートを徹底します。
+                </p>
+              </div>
+            </li>
+          </ul>
+        </footer>
+      </div>
+    </div>
+
+    <script>
+      $(function () {
+        $("#drawer_toggle").click(function () {
+          $(this).toggleClass("open");
+          $("#global_nav").slideToggle(230);
+        });
+      });
+
+      $(function () {
+        $(".h-r-list").resize(function () {
+          $(this).toggleClass("close");
+          $("#global_nav").slideToggle(230);
+        });
+      });
+
+      $(function () {
+        $(".h-r-list").hover(function () {
+          $(this).children(".r-sub-menu").stop().slideToggle(140);
+        });
+      });
+
+      $(".h-r-list").hover(
+        function () {
+          $(this).removeClass("close");
+        },
+        function () {
+          $(this).addClass("close");
+        }
+      );
+      $(window).resize(function () {
+        // ウィンドウがリサイズされたら
+        var $window = $(this).width();
+        var bp = 1200;
+        if ($window > bp) {
+          $("#global_nav").show();
+          $("#drawer_toggle").removeClass("open"); // ×印をハンバーガーに戻す
+        } else {
+          $("#global_nav").hide();
+          $("#drawer_toggle").removeClass("open"); // ×印をハンバーガーに戻す
+        }
+      });
+    </script>
+  </body>
+</html>
